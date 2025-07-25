@@ -1,59 +1,287 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Programmer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Gamer Programmer Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            blue: '#00f0ff',
+                            purple: '#aa00ff',
+                            pink: '#ff00aa',
+                            green: '#00ffaa',
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.6), 0 0 30px rgba(0, 240, 255, 0.4)',
+                        'neon-purple': '0 0 10px rgba(170, 0, 255, 0.8), 0 0 20px rgba(170, 0, 255, 0.6), 0 0 30px rgba(170, 0, 255, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        
+        .neon-text {
+            color: #00f0ff;
+            text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+        }
+        
+        .neon-border {
+            border: 2px solid #00f0ff;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.6), 0 0 30px rgba(0, 240, 255, 0.4);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #00f0ff;
+            white-space: nowrap;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00f0ff; }
+        }
+        
+        .skill-bar {
+            animation: fillAnimation 2s ease-out forwards;
+        }
+        
+        @keyframes fillAnimation {
+            from { width: 0; }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Nama Anda</h1>
-        <p>Programmer Profesional | Web Developer | Software Engineer</p>
+<body class="min-h-screen">
+    <!-- Header with Cover Photo -->
+    <header class="relative">
+        <!-- Cover Photo -->
+        <div class="h-64 lg:h-96 w-full overflow-hidden">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/282808de-be05-473b-a83d-4eb50af8ff31.png" alt="Futuristic cyberpunk cityscape with neon lights and digital rain effect in background" class="w-full h-full object-cover" />
+        </div>
+        
+        <!-- Profile Photo -->
+        <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-32 h-32 lg:w-40 lg:h-40 rounded-full border-4 border-neon-blue overflow-hidden shadow-neon">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eb93d26a-c079-41c5-8e01-9cbfef2266a6.png" alt="Professional game developer portrait wearing augmented reality glasses with colorful UI reflections on face" class="w-full h-full object-cover" />
+        </div>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#about">Tentang Saya</a></li>
-            <li><a href="#skills">Keahlian</a></li>
-            <li><a href="#projects">Proyek</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
+
+    <!-- Navigation -->
+    <nav class="mt-20 mb-10">
+        <div class="container mx-auto px-4">
+            <ul class="flex justify-center space-x-4 lg:space-x-8 flex-wrap">
+                <li><a href="#about" class="px-4 py-2 text-neon-blue hover:text-neon-green font-bold transition-all hover:shadow-neon">ABOUT</a></li>
+                <li><a href="#skills" class="px-4 py-2 text-neon-blue hover:text-neon-green font-bold transition-all hover:shadow-neon">SKILLS</a></li>
+                <li><a href="#projects" class="px-4 py-2 text-neon-blue hover:text-neon-green font-bold transition-all hover:shadow-neon">PROJECTS</a></li>
+                <li><a href="#contact" class="px-4 py-2 text-neon-blue hover:text-neon-green font-bold transition-all hover:shadow-neon">CONTACT</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section id="about">
-        <h2>Tentang Saya</h2>
-        <p>Saya adalah seorang programmer dengan pengalaman lebih dari 5 tahun dalam pengembangan perangkat lunak. Saya memiliki keahlian dalam berbagai bahasa pemrograman dan teknologi.</p>
-    </section>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pb-20 max-w-6xl">
+        <!-- About Section -->
+        <section id="about" class="mb-20 pt-10">
+            <h1 class="text-3xl lg:text-5xl font-bold text-center mb-4 neon-text typewriter">JOHN DOE</h1>
+            <h2 class="text-xl lg:text-2xl text-center mb-10 text-neon-purple">GAME DEVELOPER | FULL STACK PROGRAMMER</h2>
+            
+            <div class="bg-gray-900 bg-opacity-70 rounded-xl p-6 lg:p-8 neon-border">
+                <h3 class="text-2xl font-bold mb-4 text-neon-green">ABOUT ME</h3>
+                <p class="mb-4">Passionate game developer with 7+ years of experience creating immersive gaming experiences. Specializing in Unity, Unreal Engine, and full-stack web development for game backends.</p>
+                <p>When I'm not coding, you can find me playing competitive FPS games or exploring new technologies in the gaming industry.</p>
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2>Keahlian</h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>HTML & CSS</li>
-            <li>React</li>
-            <li>Node.js</li>
-        </ul>
-    </section>
+        <!-- Skills Section -->
+        <section id="skills" class="mb-20">
+            <h3 class="text-2xl font-bold mb-6 text-neon-pink">TECHNICAL SKILLS</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Skill Item -->
+                <div class="bg-gray-900 bg-opacity-70 rounded-xl p-6 neon-border">
+                    <h4 class="text-lg font-bold mb-3 text-neon-green">Game Development</h4>
+                    <div class="mb-2">
+                        <span class="text-sm">Unity Engine</span>
+                        <div class="w-full bg-gray-700 h-3 rounded-full mt-1">
+                            <div class="bg-neon-blue h-3 rounded-full skill-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-sm">Unreal Engine</span>
+                        <div class="w-full bg-gray-700 h-3 rounded-full mt-1">
+                            <div class="bg-neon-blue h-3 rounded-full skill-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-sm">C#</span>
+                        <div class="w-full bg-gray-700 h-3 rounded-full mt-1">
+                            <div class="bg-neon-blue h-3 rounded-full skill-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skill Item -->
+                <div class="bg-gray-900 bg-opacity-70 rounded-xl p-6 neon-border">
+                    <h4 class="text-lg font-bold mb-3 text-neon-green">Web Development</h4>
+                    <div class="mb-2">
+                        <span class="text-sm">JavaScript</span>
+                        <div class="w-full bg-gray-700 h-3 rounded-full mt-1">
+                            <div class="bg-neon-purple h-3 rounded-full skill-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-sm">Node.js</span>
+                        <div class="w-full bg-gray-700 h-3 rounded-full mt-1">
+                            <div class="bg-neon-purple h-3 rounded-full skill-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-sm">React</span>
+                        <div class="w-full bg-gray-700 h-3 rounded-full mt-1">
+                            <div class="bg-neon-purple h-3 rounded-full skill-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects">
-        <h2>Proyek</h2>
-        <ul>
-            <li><strong>Proyek 1:</strong> Deskripsi proyek 1.</li>
-            <li><strong>Proyek 2:</strong> Deskripsi proyek 2.</li>
-            <li><strong>Proyek 3:</strong> Deskripsi proyek 3.</li>
-        </ul>
-    </section>
+        <!-- Music Player -->
+        <section class="mb-20 flex justify-center">
+            <button id="musicBtn" class="relative px-8 py-3 bg-gradient-to-r from-neon-green to-neon-blue text-black font-bold rounded-full overflow-hidden transition-all hover:shadow-neon hover:scale-105 transform">
+                <span class="relative z-10">PLAY TRACK</span>
+                <span class="absolute inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity"></span>
+                <audio id="backgroundMusic" loop>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                </audio>
+            </button>
+        </section>
 
-    <section id="contact">
-        <h2>Kontak</h2>
-        <p>Email: <a href="mailto:email@anda.com">email@anda.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/username">linkedin.com/in/username</a></p>
-    </section>
+        <!-- Projects Section -->
+        <section id="projects" class="mb-20">
+            <h3 class="text-2xl font-bold mb-6 text-neon-pink">RECENT PROJECTS</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Card -->
+                <div class="bg-gray-900 bg-opacity-70 rounded-xl overflow-hidden neon-border hover:shadow-neon-purple transition-all">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/91262579-61bf-4b0f-a4d7-14f2d6ed1105.png" alt="Screenshot of space shooter game with colorful laser beams and alien spaceships" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-xl font-bold mb-2 text-neon-blue">Galactic Warfare</h4>
+                        <p class="text-sm mb-3">A space shooter game built with Unity featuring advanced particle effects.</p>
+                        <a href="#" class="text-neon-green text-sm hover:underline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card -->
+                <div class="bg-gray-900 bg-opacity-70 rounded-xl overflow-hidden neon-border hover:shadow-neon-purple transition-all">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/97fb5231-6cbb-4076-ab0d-8481aef439e9.png" alt="VR puzzle game environment with floating neon cubes and glowing pathways" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-xl font-bold mb-2 text-neon-blue">Neon Puzzle VR</h4>
+                        <p class="text-sm mb-3">Virtual reality puzzle experience with Unreal Engine's physics system.</p>
+                        <a href="#" class="text-neon-green text-sm hover:underline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card -->
+                <div class="bg-gray-900 bg-opacity-70 rounded-xl overflow-hidden neon-border hover:shadow-neon-purple transition-all">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f4e3391d-316d-40d7-b099-e3e6df75ec4f.png" alt="Multiplayer game dashboard showing player statistics and achievements in cyberpunk UI style" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-xl font-bold mb-2 text-neon-blue">Game Stats Platform</h4>
+                        <p class="text-sm mb-3">Full-stack web app for tracking multiplayer game statistics.</p>
+                        <a href="#" class="text-neon-green text-sm hover:underline">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2023 Nama Anda. Semua hak dilindungi.</p>
+        <!-- Contact Section -->
+        <section id="contact" class="mb-10">
+            <h3 class="text-2xl font-bold mb-6 text-neon-pink">GET IN TOUCH</h3>
+            
+            <div class="bg-gray-900 bg-opacity-70 rounded-xl p-6 neon-border">
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <input type="text" placeholder="Name" class="bg-gray-800 border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-neon-blue transition-all">
+                        <input type="email" placeholder="Email" class="bg-gray-800 border border-gray-700 rounded px-4 py-2 focus:outline-none focus:border-neon-blue transition-all">
+                    </div>
+                    <textarea placeholder="Message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 mb-4 focus:outline-none focus:border-neon-blue transition-all"></textarea>
+                    <button type="submit" class="px-6 py-2 bg-neon-green text-black font-bold rounded hover:bg-neon-blue transition-all">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 bg-opacity-90">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://github.com" class="text-neon-blue hover:text-neon-green transition-all">Github</a>
+                <a href="https://linkedin.com" class="text-neon-blue hover:text-neon-green transition-all">LinkedIn</a>
+                <a href="https://twitter.com" class="text-neon-blue hover:text-neon-green transition-all">Twitter</a>
+            </div>
+            <p class="text-sm">© 2023 John Doe. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Music Player Functionality
+        const musicBtn = document.getElementById('musicBtn');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        let isPlaying = false;
+        
+        musicBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicBtn.innerHTML = '<span class="relative z-10">PLAY TRACK</span><span class="absolute inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity"></span>';
+            } else {
+                backgroundMusic.play();
+                musicBtn.innerHTML = '<span class="relative z-10">PAUSE TRACK</span><span class="absolute inset-0 bg-white opacity-0 hover:opacity-20 transition-opacity"></span>';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Animation for skill bars
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            
+            skillBars.forEach(bar => {
+                // Reset width for animation
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                // Trigger reflow
+                void bar.offsetWidth;
+                
+                // Animate to original width
+                bar.style.width = width;
+            });
+        });
+    </script>
 </body>
-</html>   
+</html>
+
